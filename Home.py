@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit.components.v1 import html
 import google.generativeai as palm
 from config import PALM_API_KEY
 
@@ -29,3 +30,23 @@ if course_name:
     )
 
     st.write(res.result)
+
+
+button = """
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="mrdevknown404" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+"""
+
+html(button, height=70, width=220)
+
+st.markdown(
+    """
+    <style>
+        iframe[width="220"] {
+            position: fixed;
+            bottom: 60px;
+            right: 40px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
