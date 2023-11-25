@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as palm
 from config import PALM_API_KEY
 
-st.title("Home Page")
+st.title("AI Course Generator")
 
 palm_api_key = PALM_API_KEY
 
