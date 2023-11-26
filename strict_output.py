@@ -20,3 +20,10 @@ def strict_output(prompt):
         prompt=f"{prompt}"
     )
     return res
+
+def advanced_output(prompt):
+    res = palm.generate_text(
+        **defaults,
+        prompt=f"{prompt} with chapters {prompt} also generate 5 questions and quiz to complete afte each video."
+    )
+    return res

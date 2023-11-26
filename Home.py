@@ -22,6 +22,7 @@ with tab2:
     st.write("This feature is yet to come!")
 
 # with st.columns(3)[1]:
+# st.markdown("## AiGen Courses")
 st.markdown("### Made with :heart: by")
 profile = Image.open('./public/assets/profile.jpeg')
 st.image(profile, caption="Shivesh T", width=100)
