@@ -55,7 +55,7 @@ with tab2:
 st.markdown("## AiGen Courses")
 b_col1, b_col2 = st.columns(2)
 with b_col1:
-    st.write('AIGen.Courses is an AI service through which anyone can generate Free Courses with the help of AI and start learning on their oen, using free resources.')
+    st.write('AIGen.Courses is an AI service through which anyone can generate Free Courses with the help of AI and start learning on their own, using free resources.')
 st.markdown("### Made with :heart: by")
 profile = Image.open('./public/assets/profile.jpeg')
 st.image(profile, caption="Shivesh T", width=100)
