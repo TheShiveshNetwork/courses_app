@@ -15,15 +15,20 @@ defaults = {
 }
 
 def strict_output(prompt):
+    system_prompt = "You are an AI capable of curating course content, coming up with relevant chapter titles, and finding relevant youtube videos for each chapter"
+    concluding_prompt = "The response should be in markdown format, with headings, links, and text description."
     res = palm.generate_text(
         **defaults,
-        prompt=f"{prompt}"
+        prompt=f"{system_prompt}. The title of the course is {prompt}, create relevant chapter titles for this topic and provide youtube videos link for it. {concluding_prompt}"
     )
     return res
 
-def advanced_output(prompt):
+def advanced_output(prompt, list):
+    system_prompt = "You are an AI capable of curating course content, coming up with relevant chapter titles, and finding relevant youtube videos for each chapter"
+    units_prompt = f"It is your job to create a course about all the chapter mentioned in the unit list as {list}. The user has requested to create chapters for each of the units. Then, for each chapter, provide a detailed youtube search query that can be used to find an informative educational video for each chapter. Each query should give an educational informative course in youtube."
+    concluding_prompt = "The response should be in markdown format, with headings, links, and text description."
     res = palm.generate_text(
         **defaults,
-        prompt=f"{prompt} with chapters {prompt} also generate 5 questions and quiz to complete afte each video."
+        prompt=f"{system_prompt}. The title of the course is {prompt}. {units_prompt}. {concluding_prompt}"
     )
     return res

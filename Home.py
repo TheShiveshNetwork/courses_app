@@ -1,7 +1,8 @@
 import streamlit as st
 from streamlit.components.v1 import html
-from strict_output import strict_output
+from strict_output import strict_output, advanced_output
 from PIL import Image
+from markdown import markdown
 
 st.title(":computer: AI Course Generator")
 
@@ -13,13 +14,26 @@ with tab1:
 
     if course_name:
         res = strict_output(course_name)
-        st.write(res.result)
+        if res:
+            md_to_html = markdown(res.result)
+            st.download_button("Download as html", data=md_to_html, file_name=f"{course_name}.html")
+            st.write(res.result)
 
 with tab2:
     # INPLEMENT USING PaLM2
     course_name = st.text_input(label="Title", placeholder="Enter title of the course", key="adv")
+    st.write("#### Units")
 
-    st.write("This feature is yet to come!")
+    units = st.text_input("Enter custom units/chapters separated by comma", placeholder="format: unit1, unit2, unit3, etc")
+
+    unit_list = units.split(',')
+
+    if course_name and units and unit_list:
+        res = advanced_output(course_name, unit_list)
+        if res:
+            md_to_html = markdown(res.result)
+            st.download_button("Download as html", data=md_to_html, file_name=f"{course_name}.html")
+            st.write(res.result)
 
 # with st.columns(3)[1]:
 # st.markdown("## AiGen Courses")
