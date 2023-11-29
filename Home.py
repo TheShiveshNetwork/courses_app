@@ -15,9 +15,14 @@ with tab1:
     if course_name:
         res = strict_output(course_name)
         if res:
+            st.write("""## :laughing: Hurray
+                        
+                        Your course is Generated Successfully !!!""")
             md_to_html = markdown(res.result)
             st.download_button("Download as html", data=md_to_html, file_name=f"{course_name}.html")
             st.write(res.result)
+    else:
+        st.warning('Fill up all the fields', icon="⚠️")
 
 with tab2:
     # INPLEMENT USING PaLM2
@@ -31,10 +36,12 @@ with tab2:
     if course_name and units and unit_list:
         res = advanced_output(course_name, unit_list)
         if res:
+            st.write('## Course')
             md_to_html = markdown(res.result)
             st.download_button("Download as html", data=md_to_html, file_name=f"{course_name}.html")
             st.write(res.result)
-
+    else:
+        st.warning('Fill up all the fields', icon="⚠️")
 # with st.columns(3)[1]:
 # st.markdown("## AiGen Courses")
 st.markdown("### Made with :heart: by")
