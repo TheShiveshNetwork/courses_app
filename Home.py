@@ -4,6 +4,13 @@ from strict_output import strict_output, advanced_output
 from PIL import Image
 from markdown import markdown
 
+st.set_page_config(
+    page_title="AIGen Courses - Generate Courses with the help of AI",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 st.title(":computer: AI Course Generator")
 
 tab1, tab2 = st.tabs(["General", "Advanced"])
@@ -42,8 +49,13 @@ with tab2:
             st.write(res.result)
     else:
         st.warning('Fill up all the fields', icon="⚠️")
+
+
 # with st.columns(3)[1]:
-# st.markdown("## AiGen Courses")
+st.markdown("## AiGen Courses")
+b_col1, b_col2 = st.columns(2)
+with b_col1:
+    st.write('AIGen.Courses is an AI service through which anyone can generate Free Courses with the help of AI and start learning on their oen, using free resources.')
 st.markdown("### Made with :heart: by")
 profile = Image.open('./public/assets/profile.jpeg')
 st.image(profile, caption="Shivesh T", width=100)
