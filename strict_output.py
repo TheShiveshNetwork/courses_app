@@ -2,7 +2,8 @@ import google.generativeai as palm
 # from config import PALM_API_KEY
 import os
 
-palm.configure(api_key=os.getenv('PALM_API_KEY'))
+# palm.configure(api_key=PALM_API_KEY)
+palm.configure(api_key=os.environ["PALM_API_KEY"])
 
 defaults = {
     'model': 'models/text-bison-001',
