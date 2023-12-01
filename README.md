@@ -4,14 +4,24 @@ AIGen.Courses is an AI service through which anyone can generate Free Courses wi
 
 ### Setup
 1. Clone the repository
-`git clone https://github.com/TheShiveshNetwork/courses_app`
+```
+git clone https://github.com/TheShiveshNetwork/courses_app
+```
 2. Setup virtual environment in python
-`python -m venv .venv`
+```
+python -m venv .venv
+```
 3. Activate virtual environment
 - Windows
-`.\.venv\Scripts\activate`
+```
+.\.venv\Scripts\activate
+```
 3. Install requirements
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 ### To run the app
-`streamlit run Home.py`
+```
+streamlit run Home.py
+```
