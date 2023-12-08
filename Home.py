@@ -13,7 +13,7 @@ st.set_page_config(
 
 st.title(":computer: AI Course Generator")
 
-tab1, tab2 = st.tabs(["General", "Advanced"])
+tab1, tab2 = st.tabs(["General", "Advanced"])   # Create tabs for general and advanced feature
 
 with tab1:
     # INPLEMENT USING PaLM2
